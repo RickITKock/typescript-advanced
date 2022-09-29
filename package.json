@@ -1,0 +1,28 @@
+{
+  "name": "typescript-advanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:run": "nodemon build/index.js",
+    "start:build": "npx tsc -w",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickITKock/typescript-advanced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RickITKock/typescript-advanced/issues"
+  },
+  "homepage": "https://github.com/RickITKock/typescript-advanced#readme",
+  "dependencies": {
+    "concurrent": "^0.3.2",
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.20"
+  }
+}
