@@ -1,12 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.runStatePatternDemo = void 0;
-class Context {
+class StopState {
+    doAction(context) {
+        context.state = this;
+    }
+}
+class StartState {
+    doAction(context) {
+        context.state = this;
+    }
+}
+class Player {
     constructor() {
         this.state = null;
     }
-}
-class Player extends Context {
     kickBall() {
         const state = this.state;
         if (state === null) {
@@ -18,16 +26,6 @@ class Player extends Context {
         else if (state instanceof StartState) {
             console.log("Started playing.");
         }
-    }
-}
-class StopState {
-    doAction(context) {
-        context.state = this;
-    }
-}
-class StartState {
-    doAction(context) {
-        context.state = this;
     }
 }
 function runStatePatternDemo() {

@@ -1,8 +1,25 @@
-class Context {
-  public state: State | null = null;
+interface HasState {
+  state: State | null;
 }
 
-class Player extends Context {
+interface State {
+  doAction: (context: HasState) => void;
+}
+
+class StopState implements State {
+  doAction(context: HasState): void {
+    context.state = this;
+  }
+}
+class StartState implements State {
+  doAction(context: HasState): void {
+    context.state = this;
+  }
+}
+
+class Player {
+  public state: State | null = null;
+
   kickBall() {
     const state = this.state;
 
@@ -13,22 +30,6 @@ class Player extends Context {
     } else if (state instanceof StartState) {
       console.log("Started playing.");
     }
-  }
-}
-
-interface State {
-  doAction: (context: Context) => void;
-}
-
-class StopState implements State {
-  doAction(context: Context): void {
-    context.state = this;
-  }
-}
-
-class StartState implements State {
-  doAction(context: Context): void {
-    context.state = this;
   }
 }
 
