@@ -1,4 +1,5 @@
 "use strict";
+// NOTE: this implementation is not correct and needs to be improved
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.runStatePatternDemo = void 0;
 class StopState {

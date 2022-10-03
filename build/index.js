@@ -1,4 +1,6 @@
 "use strict";
+// import { runStatePatternDemo } from "./state-pattern";
 Object.defineProperty(exports, "__esModule", { value: true });
-const state_pattern_1 = require("./state-pattern");
-(0, state_pattern_1.runStatePatternDemo)();
+// runStatePatternDemo();
+const chain_of_responsibility_1 = require("./chain-of-responsibility");
+(0, chain_of_responsibility_1.runStatePatternDemo)();

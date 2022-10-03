@@ -1,3 +1,5 @@
+// NOTE: this implementation is not correct and needs to be improved
+
 interface HasState {
   state: State | null;
 }
