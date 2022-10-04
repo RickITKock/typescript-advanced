@@ -1,3 +1,5 @@
+import { Stack } from "./Stack";
+
 interface SpecialRequest {
   message: string;
 }
