@@ -45,10 +45,11 @@ class ConcreteHandlerB extends BaseHandler {
   }
 }
 
-export function runStatePatternDemo() {
+export function runChainOfResponsiblityPatternDemo() {
   const request: SpecialRequest = { message: "Hello" };
   const handlerA = new ConcreteHandlerA();
   const handlerB = new ConcreteHandlerB();
+
   handlerA.setNext(handlerB);
   handlerA.handle(request);
 }

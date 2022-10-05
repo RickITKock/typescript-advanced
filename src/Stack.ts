@@ -40,7 +40,7 @@ interface CompletelyDifferent {
   data: string;
 }
 
-export function runStatePatternDemo() {
+export function runStackDemo() {
   const stack = new Stack<SomeType | CompletelyDifferent>();
   stack.push({ name: "stack", message: "stack" });
   stack.push({ id: "New message", data: "Jeroen" });

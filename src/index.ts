@@ -1,7 +1,7 @@
-// import { runStatePatternDemo } from "./state-pattern";
+import { runChainOfResponsiblityPatternDemo } from "./chain-of-responsibility";
+import { runStatePatternDemo } from "./state-pattern";
+import { runStackDemo } from "./Stack";
 
-// runStatePatternDemo();
-
-import { runStatePatternDemo } from "./chain-of-responsibility";
-
+runChainOfResponsiblityPatternDemo();
 runStatePatternDemo();
+runStackDemo();

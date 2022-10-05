@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.runStatePatternDemo = exports.Stack = void 0;
+exports.runStackDemo = exports.Stack = void 0;
 class Stack {
     constructor(capacity = Infinity) {
         this.capacity = capacity;
@@ -23,9 +23,9 @@ class Stack {
     }
 }
 exports.Stack = Stack;
-function runStatePatternDemo() {
+function runStackDemo() {
     const stack = new Stack();
     stack.push({ name: "stack", message: "stack" });
     stack.push({ id: "New message", data: "Jeroen" });
 }
-exports.runStatePatternDemo = runStatePatternDemo;
+exports.runStackDemo = runStackDemo;
