@@ -10,7 +10,7 @@ interface Handler {
   handle(request: SpecialRequest): void;
 }
 
-abstract class BaseHandler implements Handler {
+export abstract class BaseHandler implements Handler {
   public next: Handler | undefined;
 
   setNext(handler: Handler): void {
@@ -27,8 +27,6 @@ abstract class BaseHandler implements Handler {
 class ConcreteHandlerA extends BaseHandler {
   handle(request: SpecialRequest): void {
     const { message } = request;
-    console.log("I am concrete handlerA.");
-    console.log("Now processing request...");
 
     const newMessage = message + " Processing";
     const newRequest = {
@@ -41,7 +39,7 @@ class ConcreteHandlerA extends BaseHandler {
 
 class ConcreteHandlerB extends BaseHandler {
   handle(request: SpecialRequest): void {
-    console.log(`I'm supposed to handle some request: ${request.message}`);
+    `I'm supposed to handle some request: ${request.message}`;
   }
 }
 

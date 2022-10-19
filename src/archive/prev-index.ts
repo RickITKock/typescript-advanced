@@ -21,14 +21,14 @@
 //   age: "twenty one",
 //   email: "joe@example.com",
 //   swim: () => {
-//     console.log("NewPerson: " + "is swimming");
+//     ("NewPerson: " + "is swimming");
 //   },
 // };
 
 // newPerson.swim();
 
 // function printNewPerson(person: { name: string; age: number; email?: string }) {
-//   console.log(
+//   (
 //     `This is ${person.name} and he's ${person.age} with email: ${
 //       person.email || "No email available"
 //     }`
@@ -36,7 +36,7 @@
 // }
 
 // function altPrintNewPerson(person: AltNewPerson) {
-//   console.log(
+//   (
 //     `This is ${person.name} and he's ${person.age} with email: ${
 //       person.email || "No email available"
 //     } has ID: ${person.id || "No ID available"}`
@@ -67,7 +67,7 @@
 // };
 
 // if ("lovesHoney" in bear) {
-//   console.log("This is possibly a bear");
+//   ("This is possibly a bear");
 // }
 
 // printNewPerson({ name: "Rick", age: 21, email: "rkock127@gmail.com" });
@@ -78,7 +78,7 @@
 //   email: "rkock127@gmail.com",
 //   id: "1",
 //   swim: () => {
-//     console.log(`${altPrintNewPerson.name} is swimming`);
+//     (`${altPrintNewPerson.name} is swimming`);
 //   },
 // };
 
@@ -90,9 +90,9 @@ interface Options {
 
 function configureOptions(options: Options | "auto"): void {
   if (options == "auto") {
-    console.log(`configuring options: ${options}`);
+    `configuring options: ${options}`;
   } else {
-    console.log(`configuring options: ${options.width}`);
+    `configuring options: ${options.width}`;
   }
 }
 
@@ -108,10 +108,10 @@ configureOptions({ width: 1 });
 
 // function handleShape(shape: Shape) {
 //   if (shape.kind === "circle") {
-//     console.log(`configuring shape: ${shape.radius} which is a ${shape.kind}`);
+//     (`configuring shape: ${shape.radius} which is a ${shape.kind}`);
 //     return;
 //   }
-//   console.log(
+//   (
 //     `configuring shape: ${shape.sideLength} which is a ${shape.kind}`
 //   );
 // }
@@ -134,9 +134,9 @@ type Shape = Circle | Square;
 
 function newHandleShape(shape: Shape): void {
   if (shape.kind === "square") {
-    console.log(`square of sidelength ${shape.sideLength}`);
+    `square of sidelength ${shape.sideLength}`;
   } else if (shape.kind === "circle") {
-    console.log(`circle of radius ${shape.radius}`);
+    `circle of radius ${shape.radius}`;
   }
 }
 
@@ -151,11 +151,11 @@ function saySomething(openMouth: OpenMouthFunction, name: string, age: number) {
 }
 
 function print(phrase: string, age: number) {
-  console.log(phrase + age);
+  phrase + age;
 }
 
 function yell(phrase: string, age: number) {
-  console.log(phrase + age);
+  phrase + age;
 }
 
 saySomething(print, "Rick", 21);
@@ -168,7 +168,7 @@ function getElement<T>(arr: T[]): T | undefined {
 
 const names = ["Rick", "Dick", "Sarah"];
 
-console.log(getElement(names));
+getElement(names);
 
 function map<Input, Output>(
   arr: Input[],
@@ -180,7 +180,7 @@ function map<Input, Output>(
 // Parameter 'n' is of type 'string'
 // 'parsed' is of type 'number[]'
 const parsed = map(["1", "hey", "3"], (n) => parseInt(n));
-console.log(parsed);
+parsed;
 
 // Constraints
 function longest<T extends { length: number }>(a: T, b: T) {
@@ -215,8 +215,8 @@ function len(x: any[] | string): number {
   return x.length;
 }
 
-console.log(len("Hello world!"));
-console.log(len([1, 2, 3]));
+len("Hello world!");
+len([1, 2, 3]);
 
 function safeParse(str: string): unknown {
   return JSON.parse(str);
@@ -246,7 +246,7 @@ const myArray: StringArray = [
 
 const secondItem = myArray[1];
 
-console.log(secondItem);
+secondItem;
 
 // Extending types
 interface Colorful {
@@ -279,8 +279,8 @@ const apple: Apple = { message: "I'm an apple" };
 
 let appleBox: Box<Apple> = { contents: apple };
 
-console.log(box.contents);
-console.log(appleBox);
+box.contents;
+appleBox;
 
 // Tuple types
 type StringNumberPair = [string, number];
@@ -294,11 +294,11 @@ const first: string = arr[0];
 
 // // let output = identity<string>("myString");
 // let output = identity<number>(4);
-// console.log(output);
+// (output);
 
 // Working with Generic Type Variables
 // function loggingIdentity<Type>(arg: Type[]): Type[] {
-//   console.log(arg.length);
+//   (arg.length);
 //   return arg;
 // }
 
@@ -320,14 +320,14 @@ function identity<Type>(arg: Type): Type {
 }
 
 function altIdentity<Type>(arg: Type): void {
-  console.log(arg);
+  arg;
 }
 
 let myIdentity: GenericIdentityFn<number> = identity;
 let myNewIdentity: GenericIdentityFn<void> = altIdentity;
 
-console.log(myIdentity(5));
-// console.log(myNewIdentity);
+myIdentity(5);
+// (myNewIdentity);
 
 // class GenericNumber<NumType> {
 //   zeroValue: NumType;
@@ -339,7 +339,7 @@ interface Lengthwise {
 }
 
 function loggingIdentity<Type extends Lengthwise>(arg: Type): Type {
-  console.log(arg.length); // Now we know it has a .length property, so no more error
+  arg.length; // Now we know it has a .length property, so no more error
   return arg;
 }
 
@@ -389,7 +389,7 @@ type M = keyof Mapish;
 
 // const someType: M = true; // "Rick";
 
-// console.log(someType);
+// (someType);
 
 // Type of operator
 
@@ -437,7 +437,7 @@ type Example1 = Programmer extends Professional ? number : string;
 //   : NameLabel;
 
 // function createLabel<T extends number | string>(idOrName: T): NameOrId<T> {
-//   console.log(typeof idOrName);
+//   (typeof idOrName);
 //   return;
 // }
 

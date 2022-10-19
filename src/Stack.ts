@@ -5,6 +5,7 @@ interface IStack<T> {
   size(): number;
 }
 
+// practice alt+click and ctrl + d
 export class Stack<T> implements IStack<T> {
   private storage: T[] = [];
 

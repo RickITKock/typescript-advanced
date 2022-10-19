@@ -5,7 +5,7 @@ function isString(name?: string): name is string {
 }
 
 function simulateSuccess(message: string) {
-  console.log(`I've succeeded: ${message}`);
+  `I've succeeded: ${message}`;
 }
 
 function getName(name: string | undefined, onSuccess: OnSuccess): void {

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.runStackDemo = exports.Stack = void 0;
+// practice alt+click and ctrl + d
 class Stack {
     constructor(capacity = Infinity) {
         this.capacity = capacity;

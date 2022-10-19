@@ -2,20 +2,20 @@
 // class NewNEwPerson<Person> {
 function configureOptions(options) {
     if (options == "auto") {
-        console.log(`configuring options: ${options}`);
+        `configuring options: ${options}`;
     }
     else {
-        console.log(`configuring options: ${options.width}`);
+        `configuring options: ${options.width}`;
     }
 }
 configureOptions("auto");
 configureOptions({ width: 1 });
 function newHandleShape(shape) {
     if (shape.kind === "square") {
-        console.log(`square of sidelength ${shape.sideLength}`);
+        `square of sidelength ${shape.sideLength}`;
     }
     else if (shape.kind === "circle") {
-        console.log(`circle of radius ${shape.radius}`);
+        `circle of radius ${shape.radius}`;
     }
 }
 newHandleShape({ kind: "circle", radius: 5 });
@@ -24,10 +24,10 @@ function saySomething(openMouth, name, age) {
     openMouth(`${1 + 2 + 3} is ${name}'s favorite number`, age);
 }
 function print(phrase, age) {
-    console.log(phrase + age);
+    phrase + age;
 }
 function yell(phrase, age) {
-    console.log(phrase + age);
+    phrase + age;
 }
 saySomething(print, "Rick", 21);
 saySomething(yell, "Rick", 30);
@@ -36,14 +36,14 @@ function getElement(arr) {
     return arr[1];
 }
 const names = ["Rick", "Dick", "Sarah"];
-console.log(getElement(names));
+getElement(names);
 function map(arr, func) {
     return arr.map(func);
 }
 // Parameter 'n' is of type 'string'
 // 'parsed' is of type 'number[]'
 const parsed = map(["1", "hey", "3"], (n) => parseInt(n));
-console.log(parsed);
+parsed;
 // Constraints
 function longest(a, b) {
     if (a.length >= b.length) {
@@ -73,8 +73,8 @@ function firstElement1(arr) {
 function len(x) {
     return x.length;
 }
-console.log(len("Hello world!"));
-console.log(len([1, 2, 3]));
+len("Hello world!");
+len([1, 2, 3]);
 function safeParse(str) {
     return JSON.parse(str);
 }
@@ -93,7 +93,7 @@ const myArray = [
     "seven",
 ];
 const secondItem = myArray[1];
-console.log(secondItem);
+secondItem;
 const cc = {
     color: "red",
     radius: 42,
@@ -101,21 +101,21 @@ const cc = {
 let box = { contents: "red" };
 const apple = { message: "I'm an apple" };
 let appleBox = { contents: apple };
-console.log(box.contents);
-console.log(appleBox);
+box.contents;
+appleBox;
 const arr = ["try", 1];
 const first = arr[0];
 function identity(arg) {
     return arg;
 }
 function altIdentity(arg) {
-    console.log(arg);
+    arg;
 }
 let myIdentity = identity;
 let myNewIdentity = altIdentity;
-console.log(myIdentity(5));
+myIdentity(5);
 function loggingIdentity(arg) {
-    console.log(arg.length); // Now we know it has a .length property, so no more error
+    arg.length; // Now we know it has a .length property, so no more error
     return arg;
 }
 // Using type parameters in generic constraints
@@ -158,7 +158,7 @@ function createInstance(c) {
 const nametag = createInstance(Lion).keeper.nametag;
 const hasMask = createInstance(Bee).keeper.hasMask;
 // const someType: M = true; // "Rick";
-// console.log(someType);
+// (someType);
 // Type of operator
 function f() {
     return { x: 10, y: 3 };

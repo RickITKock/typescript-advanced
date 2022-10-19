@@ -5,7 +5,7 @@ function isString(name) {
     return typeof name === "string";
 }
 function simulateSuccess(message) {
-    console.log(`I've succeeded: ${message}`);
+    `I've succeeded: ${message}`;
 }
 function getName(name, onSuccess) {
     if (isString(name)) {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.runChainOfResponsiblityPatternDemo = void 0;
+exports.runChainOfResponsiblityPatternDemo = exports.BaseHandler = void 0;
 class BaseHandler {
     setNext(handler) {
         this.next = handler;
@@ -11,11 +11,10 @@ class BaseHandler {
         }
     }
 }
+exports.BaseHandler = BaseHandler;
 class ConcreteHandlerA extends BaseHandler {
     handle(request) {
         const { message } = request;
-        console.log("I am concrete handlerA.");
-        console.log("Now processing request...");
         const newMessage = message + " Processing";
         const newRequest = {
             message: newMessage,
@@ -25,7 +24,7 @@ class ConcreteHandlerA extends BaseHandler {
 }
 class ConcreteHandlerB extends BaseHandler {
     handle(request) {
-        console.log(`I'm supposed to handle some request: ${request.message}`);
+        `I'm supposed to handle some request: ${request.message}`;
     }
 }
 function runChainOfResponsiblityPatternDemo() {
