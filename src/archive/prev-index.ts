@@ -166,7 +166,7 @@ function getElement<T>(arr: T[]): T | undefined {
   return arr[1];
 }
 
-const names = ["Rick", "Dick", "Sarah"];
+const names = ["Rick", "David", "Sarah"];
 
 getElement(names);
 

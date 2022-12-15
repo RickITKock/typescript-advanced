@@ -35,7 +35,7 @@ saySomething(yell, "Rick", 30);
 function getElement(arr) {
     return arr[1];
 }
-const names = ["Rick", "Dick", "Sarah"];
+const names = ["Rick", "David", "Sarah"];
 getElement(names);
 function map(arr, func) {
     return arr.map(func);
